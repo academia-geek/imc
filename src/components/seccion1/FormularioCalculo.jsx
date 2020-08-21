@@ -1,15 +1,14 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import VerCalculoIMC from './VerCalculoIMC';
 
 function FormularioCalculo(props) {
     console.log(props);
     let {
         nombres
     } = props;
-    let htmlLi = "";
-    nombres.forEach((nombre) => {
-        htmlLi += `<li>${nombre}</li>`; 
-    });
-    console.log(htmlLi);
+
+    console.log("la suma es = ",props.sumarNumeros(2,3));
     return (
         <div className="column">
             <label htmlFor="peso">Peso (kilos)</label>
@@ -26,5 +25,13 @@ function FormularioCalculo(props) {
         </div>
     )
 }
+
+FormularioCalculo.propTypes = {
+    html : PropTypes.element.isRequired,
+    nombres : PropTypes.array.isRequired,
+    notas : PropTypes.object.isRequired,
+    sumarNumeros : PropTypes.func.isRequired,
+    miCompontenVer:PropTypes.object
+};
 
 export default FormularioCalculo
