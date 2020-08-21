@@ -3,7 +3,7 @@ import Cabecera from './CabeceraCalculo';
 import Cuerpo from './cuerpocalculo';
 function micomponente(){
     return (
-        <section>
+        <section className="panel">
             <Cabecera titulo="Calculadora" 
                       nombre_clase="cabecera_calculo"
             />
