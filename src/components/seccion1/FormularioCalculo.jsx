@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import VerCalculoIMC from './VerCalculoIMC';
 
 function FormularioCalculo(props) {
-    console.log(props);
+    //console.log(props);
     let {
         nombres
     } = props;
 
-    console.log("la suma es = ",props.sumarNumeros(2,3));
+   // console.log("la suma es = ",props.sumarNumeros(2,3));
     return (
         <div className="column">
             <label htmlFor="peso">Peso (kilos)</label>
