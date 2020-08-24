@@ -1,24 +1,35 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { toast } from "bulma-toast"
 
 class FormularioCalculo extends React.Component {
 
-    // constructor(props){
-    //     super(props);
-    // }
+     constructor(props){
+         super(props);
+        // this.C_IMC = props.C_IMC;
+         this.calcularIMC = this.calcularIMC.bind(this);
+     }
 
     calcularIMC(e){
         try{
-            let peso = document.querySelector("#peso").value;
-            let altura = document.querySelector("#altura").value;
-            let imc = peso / altura;
+            let peso_1 = parseFloat(document.querySelector("#peso").value);
+            let altura = parseFloat(document.querySelector("#altura").value);
+            let imc = peso_1 / altura;
+           
             if(!isNaN(imc)){
-                console.log("entro",imc);
+                this.props.C_IMC.setState({peso : peso_1, altura : altura})    
             }else
                 throw new Error("Valor de IMC invalido");
 
         }catch(error){
-            console.log("el error es: ", error);
+            toast({
+                message: `Se presento un error durante el calculo. ${error.message}`,
+                type: "is-danger",
+                position: "top-right",
+                closeOnClick: true,
+                pauseOnHover: true,
+              //  animate: { in: "fadeIn", out: "fadeOut" }
+            });
         }
     }
 
@@ -50,11 +61,7 @@ class FormularioCalculo extends React.Component {
     }
 }
 FormularioCalculo.propTypes = {
-    html: PropTypes.element.isRequired,
-    nombres: PropTypes.array.isRequired,
-    notas: PropTypes.object.isRequired,
-    sumarNumeros: PropTypes.func.isRequired,
-    miCompontenVer: PropTypes.object
+    C_IMC: PropTypes.object
 };
 
 export default FormularioCalculo

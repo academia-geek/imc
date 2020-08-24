@@ -6,25 +6,21 @@ class IMC extends Component {
         super(props);
         this.state = {
             peso : 0,
-            altura : 0
+            altura : 1,
+            contador : 0
         }
     }
+
+    incrementar = () => this.setState({contador:this.state.contador+1})
+
     render() {
         return (
-            <div>
-                <FormularioCalculo 
-                    nombres={["oscar", "cristian", "sebastian", "monica", "andrea"]} 
-                    notas={{nota1:2,nota2:3,nota3:5}}
-                    html={<input type="number"/>}
-                    sumarNumeros={(n1,n2) => {
-                        let suma = n1 + n2;
-                        return suma;
-                    }}
-                    miCompontenVer = {miCompontenVer}
-                    test = {this}
-                    />
+            <>
+                <p>Valor del contador : {this.state.contador}</p>
+                <button onClick={this.incrementar}>incrementar</button>
+                <FormularioCalculo C_IMC = {this} />
                 <VerCalculo altura={this.state.altura} peso={this.state.peso}/>
-            </div>
+            </>
         );
     }
 }
