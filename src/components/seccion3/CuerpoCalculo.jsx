@@ -3,11 +3,7 @@ import FormularioCalculo from './FormularioCalculo';
 import VerCalculo from './VerCalculoIMC';
 import BasculaIMC from './BasculaIMC';
 export default class CuerpoCalculo extends React.Component {
-    constructor(props){
-        super(props);
-    }
     
-
     render(){
         let miCompontenVer = <VerCalculo altura={12} peso={8}/>
        

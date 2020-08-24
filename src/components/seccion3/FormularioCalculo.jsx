@@ -1,33 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import VerCalculoIMC from './VerCalculoIMC';
 
-function FormularioCalculo(props) {
-    //console.log(props);
-    let {
-        nombres,
-        test
-    } = props;
-    console.log(test); 
-   // console.log("la suma es = ",props.sumarNumeros(2,3));
-    return (
-        <div className="column">
-            <label htmlFor="peso">Peso (kilos)</label>
-            {props.html}
-            <input type="number" name="peso" id="peso" className="caja_texto"/>
-            <br/>
-            <label htmlFor="">Altura (cm)</label>
-            <input type="number" name="altura" id="altura" className="caja_texto"/>
-            <button onClick={test.saludar}>Saludar</button>
-            <ul id="lista">
-            {nombres.map((nombre,index) => {
-                return <li key={index}>{nombre}</li>
-            })}
-            </ul>
-        </div>
-    )
+class FormularioCalculo extends React.Component{
+
+    // constructor(props){
+    //     super(props);
+    // }
+
+    render() {
+
+        return (
+            <div className="column">
+                <div className="field">
+                    <label htmlFor="peso">Peso (kilos)</label>
+                    <input type="number" name="peso" id="peso" className="caja_texto"/>
+                </div>
+                <div class="field">
+                    <label htmlFor="">Altura (cm)</label>
+                    <input type="number" name="altura" id="altura" className="caja_texto"/>
+                </div>
+            </div>
+        )
+    }
 }
-
 FormularioCalculo.propTypes = {
     html : PropTypes.element.isRequired,
     nombres : PropTypes.array.isRequired,
