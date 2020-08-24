@@ -14,10 +14,11 @@ class FormularioCalculo extends React.Component {
         try{
             let peso_1 = parseFloat(document.querySelector("#peso").value);
             let altura = parseFloat(document.querySelector("#altura").value);
-            let imc = peso_1 / altura;
+            let imc = peso_1 / Math.pow(altura,2) ;
            
             if(!isNaN(imc)){
-                this.props.C_IMC.setState({peso : peso_1, altura : altura})    
+                this.props.C_IMC.setState({peso : peso_1, altura : altura});
+                this.props.App.setState({imc: imc}); 
             }else
                 throw new Error("Valor de IMC invalido");
 

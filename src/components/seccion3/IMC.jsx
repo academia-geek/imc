@@ -13,7 +13,7 @@ class IMC extends Component {
     render() {
         return (
             <>
-                <FormularioCalculo C_IMC = {this} />
+                <FormularioCalculo C_IMC = {this} App = {this.props.App}/>
                 <VerCalculo altura={this.state.altura} peso={this.state.peso}/>
             </>
         );

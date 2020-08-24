@@ -8,7 +8,7 @@ export default class CuerpoCalculo extends React.Component {
         return (
             <section className="panel-block">
                 <article className="columns is-mobile">
-                    <IMC/>
+                    <IMC App = {this.props.App}/>
                     <BasculaIMC/>
                 </article>
             </section> 

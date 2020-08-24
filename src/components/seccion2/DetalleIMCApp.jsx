@@ -14,7 +14,7 @@ export default class DetalleIMCApp extends Component{
     render(){
         return (<section className="panel">
                     <Cabecera/>
-                    <Cuerpo/>
+                    <Cuerpo App = {this.props.App}/>
                 </section>
         );
     }

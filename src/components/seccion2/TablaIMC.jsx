@@ -6,6 +6,7 @@ class TablaIMC extends Component {
             cabecera,
             data
         } = this.props.datosTabla;
+        console.log(this.props);
         return (
             <div className="table-container">
                 <table className="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
@@ -13,6 +14,7 @@ class TablaIMC extends Component {
                     <tr>
                         <th>{cabecera.cabecera1}</th>
                         <th>{cabecera.cabecera2}</th>
+                        <th>{cabecera.cabecera3}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -21,6 +23,7 @@ class TablaIMC extends Component {
                             return (<tr key={i}>
                                 <td>{fila.imc}</td>
                                 <td>{fila.situacion}</td>
+                                <td>{(this.props.imc >= fila.li && this.props.imc <= fila.ls)?"X":""}</td>
                             </tr>)
                         })
                         }
