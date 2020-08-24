@@ -8,8 +8,18 @@ class FormularioCalculo extends React.Component {
     // }
 
     calcularIMC(e){
-        let peso = document.querySelector("#peso").value;
-        let altura = document.querySelector("#altura").value;
+        try{
+            let peso = document.querySelector("#peso").value;
+            let altura = document.querySelector("#altura").value;
+            let imc = peso / altura;
+            if(!isNaN(imc)){
+                console.log("entro",imc);
+            }else
+                throw new Error("Valor de IMC invalido");
+
+        }catch(error){
+            console.log("el error es: ", error);
+        }
     }
 
     render() {
