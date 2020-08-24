@@ -2,7 +2,6 @@ import React,{Component} from 'react';
 
 export default class DetalleIMCApp extends Component{
     // {nombre:"Oscar", apellido: "Mesa", edad: 29}
-    
     constructor(props){
         console.log(props);
         super(props);

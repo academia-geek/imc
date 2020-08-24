@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import 'bulma/css/bulma.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import './index.css';
-import Componente1 from './components/seccion1/CalculadorApp'
+import Componente1 from './components/seccion3/CalculadorApp'
 import Componente2 from './components/seccion2/DetalleIMCApp'
 import * as serviceWorker from './serviceWorker';
 
