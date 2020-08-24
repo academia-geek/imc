@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'; 
 
 function VerCalculoIMC(props) {
-    let imc = Math.round(calcularIMC(props));
+    let imc = calcularIMC(props).toFixed(2);
     return (
         <div className="column">
             <h3>IMC</h3>
